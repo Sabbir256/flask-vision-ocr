@@ -1,0 +1,10 @@
+services:
+  flask-vision:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/service-account.json
+      - PORT=8080
+    volumes:
+      - ./service-account.json:/app/service-account.json:ro
