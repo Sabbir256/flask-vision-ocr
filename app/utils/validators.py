@@ -1,6 +1,6 @@
 from werkzeug.utils import secure_filename
 
-ALLOWED_EXTENSIONS = {'jpg', 'jpeg'}
+ALLOWED_EXTENSIONS = {'jpg', 'jpeg', 'png', 'tiff', 'bmp', 'gif'}
 
 def allowed_file(filename):
     return '.' in filename \
