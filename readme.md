@@ -47,3 +47,11 @@ docker-compose down
 curl --location 'localhost:5000/api/v1/extract-text' \
 --form 'file=@"your-image-file-path-here"'
 ```
+
+/bulk-extract-text
+```shell
+curl --location 'localhost:5000/api/v1/bulk-extract-text' \
+--form 'files=@"your-image-file-path-here"' \
+--form 'files=@"your-image-file-path-here"' \
+--form 'files=@"your-image-file-path-here"'
+```

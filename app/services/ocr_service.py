@@ -46,4 +46,16 @@ class OCRService:
                 raise Exception("Failed to extract text from image.")
                 
                 
-    
+    def extract_text_from_images(self, files) -> list[dict]:
+        results: list[dict] = []
+        for file in files:
+            try:
+                result = self.extract_text_from_image(file)
+                results.append({**{"filename": file.filename}, **result})
+            except Exception as e:
+                logger.error(f"Failed to process file {file.filename}: {str(e)}")
+                results.append({
+                    "filename": file.filename,
+                    "error": str(e)
+                })
+        return results
